@@ -36,7 +36,6 @@ import com.mhacks.android.ui.map.MapViewFragment;
 import com.mhacks.android.ui.settings.SettingsFragment;
 import com.mhacks.android.ui.kotlin.announcements.AnnouncementFragment;
 import org.mhacks.android.R;
-import org.mhacks.mhacks.login.LoginActivity;
 
 import java.io.IOException;
 import java.util.Set;

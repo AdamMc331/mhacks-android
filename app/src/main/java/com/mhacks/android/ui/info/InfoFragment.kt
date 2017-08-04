@@ -7,10 +7,10 @@ import android.support.v4.app.Fragment
  */
 class InfoFragment : Fragment() {
 //
-//    override var FragmentColor: Int = android.R.color.holo_green_light
-//    override var AppBarTitle: Int = R.string.welcome
+//    override var fragmentColor: Int = android.R.color.holo_green_light
+//    override var appBarTitle: Int = R.string.welcome
 //    override var NavigationStateList: Int = R.color.darkBlue
-//    override var LayoutResourceID: Int = R.layout.fragment_info
+//    override var layoutResourceID: Int = R.layout.fragment_info
 //    override var configureView: (view: View) -> Unit? = fun(view: View) {
 //
 //

@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
+import com.mhacks.android.ui.login.LoginActivity
 import kotlinx.android.synthetic.main.fragment_login.*
 import org.mhacks.android.R
-import org.mhacks.mhacks.login.LoginActivity
 
 /**
  * Fragment for the main login component.
@@ -28,7 +28,6 @@ class LoginFragment: Fragment(), OnClickListener{
         (activity as LoginActivity)
                 .switchFragment(LoginViewPagerFragment.instance)
     }
-
 
     companion object {
         val instance

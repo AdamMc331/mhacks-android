@@ -1,4 +1,4 @@
-package org.mhacks.mhacks.login
+package com.mhacks.android.ui.login;
 
 import android.content.Context
 import android.os.Build
@@ -8,7 +8,6 @@ import android.view.View
 import android.view.WindowManager
 import com.mhacks.android.ui.login.components.LoginFragment
 import org.mhacks.android.R
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 
 class LoginActivity : AppCompatActivity() {
 
@@ -32,9 +31,5 @@ class LoginActivity : AppCompatActivity() {
             window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
             window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         }
-    }
-
-    override fun attachBaseContext(newBase: Context) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
     }
 }

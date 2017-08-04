@@ -14,9 +14,6 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <!-- Push notification stuff -->
-    <permission
-        android:name="com.mhacks.android.permission.C2D_MESSAGE"
-        android:protectionLevel="signature" />
 
     <uses-permission android:name="com.mhacks.android.permission.C2D_MESSAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -48,7 +45,7 @@
         </activity>
 
         <activity
-            android:name="org.mhacks.mhacks.login.LoginActivity"
+            android:name="com.mhacks.android.ui.login.LoginActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
         </activity>
@@ -84,8 +81,6 @@
         <meta-data
             android:name="android.app.default_searchable"
             android:value=".SearchResultsActivity" />
-
-        <activity android:name="com.mhacks.android.ui.login.LoginActivity"></activity>
     </application>
 
 </manifest>

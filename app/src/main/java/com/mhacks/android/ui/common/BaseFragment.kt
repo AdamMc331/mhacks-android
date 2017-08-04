@@ -14,47 +14,44 @@ import android.view.ViewGroup
 
 abstract class BaseFragment : Fragment() {
 
-    private var mCallback: OnNavigationChangeListener? = null
+    private var callback: OnNavigationChangeListener? = null
 
-    abstract var FragmentColor: Int set
-    abstract var AppBarTitle: Int set
-    abstract var NavigationColor: NavigationColor set
-    abstract var LayoutResourceID: Int set
+    abstract var fragmentColor: Int set
+    abstract var appBarTitle: Int set
+    abstract var navigationColor: NavigationColor set
+    abstract var layoutResourceID: Int set
     abstract var configureView: (view: View) -> Unit? set
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mCallback = activity as OnNavigationChangeListener
+        callback = activity as OnNavigationChangeListener
     }
 
     override final fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         changeColors()
-        val view = inflater!!.inflate(LayoutResourceID, container, false)
+        val view = inflater!!.inflate(layoutResourceID, container, false)
         configureView(view)
         return view
     }
 
     private fun changeColors() {
-        mCallback!!.setFragmentTitle(AppBarTitle)
-        mCallback!!.setActionBarColor(FragmentColor)
-        mCallback!!.setBottomNavigationColor(NavigationColor)
+        callback!!.setFragmentTitle(appBarTitle)
+        callback!!.setActionBarColor(fragmentColor)
+        callback!!.setBottomNavigationColor(navigationColor)
 
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            mCallback!!.setStatusBarColor(android.R.color.transparent)
-            mCallback!!.setTransparentStatusBar()
-            if (FragmentColor == android.R.color.transparent) {
-                mCallback!!.setTransparentStatusBar()
+            callback!!.setStatusBarColor(android.R.color.transparent)
+            callback!!.setTransparentStatusBar()
+            if (fragmentColor == android.R.color.transparent) {
+                callback!!.setTransparentStatusBar()
             } else {
-//                mCallback!!.clearTransparentStatusBar()
-//                mCallback!!.setStatusBarColor(FragmentColor)
-                mCallback!!.setLayoutFullScreen()
-
+//                callback!!.clearTransparentStatusBar()
+//                callback!!.setStatusBarColor(fragmentColor)
+                callback!!.setLayoutFullScreen()
 
             }
         }
-
-
     }
 
     interface OnNavigationChangeListener {
