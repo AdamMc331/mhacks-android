@@ -2,7 +2,6 @@ package com.mhacks.android.ui;
 
 import android.annotation.TargetApi;
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
@@ -29,14 +28,13 @@ import com.mhacks.android.data.network.HackathonCallback;
 import com.mhacks.android.data.network.NetworkManager;
 import com.mhacks.android.ui.common.BaseFragment;
 import com.mhacks.android.ui.common.NavigationColor;
-import com.mhacks.android.ui.countdown.WelcomeFragment;
+import com.mhacks.android.ui.welcome.WelcomeFragment;
 import com.mhacks.android.ui.events.ScheduleFragment;
 import com.mhacks.android.ui.info.InfoFragment;
 import com.mhacks.android.ui.map.MapViewFragment;
 import com.mhacks.android.ui.settings.SettingsFragment;
 import com.mhacks.android.ui.kotlin.announcements.AnnouncementFragment;
 import org.mhacks.android.R;
-import org.mhacks.mhacks.login.LoginActivity;
 
 import java.io.IOException;
 import java.util.Set;
@@ -284,7 +282,8 @@ public class MainActivity extends AppCompatActivity implements
 
         getSupportFragmentManager().
                 beginTransaction()
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                .setCustomAnimations(R.anim.fade_in,
+                        R.anim.fade_out)
                 .replace(R.id.main_container, fragment)
                 .commit();
     }
